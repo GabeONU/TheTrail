@@ -1,3 +1,19 @@
 This is a file of the things we need to do. Low and High priority.
 
 Low, make the ui scale across computers
+
+Add UI to: 
+	-Check supplies
+	-Look at map
+	-Change pace
+	-Change food consumption
+
+	
+	
+	
+Add	an npc to:
+	-Attempt to trade
+	-Talk to
+	
+Add store screen:
+	-Buy items
