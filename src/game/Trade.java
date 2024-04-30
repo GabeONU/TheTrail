@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Trade {
-	
+	//dependacy injection
 	public void trade(Person tradee, Person trader, Item itemAway, Item itemIn) {
 
 		if (tradee.items.contains(itemAway) && trader.items.contains(itemIn)) {
