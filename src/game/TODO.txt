@@ -1,8 +1,9 @@
 This is a file of the things we need to do. Low and High priority.
 
 Low, make the ui scale across computers
+Medi, make a collision detection class
 
-Add UI to: 
+High, Add UI to: 
 	-Check supplies
 	-Look at map
 	-Change pace
@@ -11,9 +12,9 @@ Add UI to:
 	
 	
 	
-Add	an npc to:
+High, Add	an npc to:
 	-Attempt to trade
 	-Talk to
 	
-Add store screen:
+High, Add store screen:
 	-Buy items
