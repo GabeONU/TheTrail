@@ -1,7 +1,12 @@
 This is a file of the things we need to do. Low and High priority.
 
 Low, make the ui scale across computers
+Low, make a custom button UI
+
 Medi, make a collision detection class
+
+High, create the start of the game
+	-player buy items and set stats
 
 High, Add UI to: 
 	-Check supplies
@@ -9,8 +14,9 @@ High, Add UI to:
 	-Change pace
 	-Change food consumption
 
-	
-	
+High, Complete river interaction
+
+High, start creating the fort interaction	
 	
 High, Add	an npc to:
 	-Attempt to trade

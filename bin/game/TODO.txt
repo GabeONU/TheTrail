@@ -1,19 +1,26 @@
 This is a file of the things we need to do. Low and High priority.
 
 Low, make the ui scale across computers
+Low, make a custom button UI
 
-Add UI to: 
+Medi, make a collision detection class
+
+High, create the start of the game
+	-player buy items and set stats
+
+High, Add UI to: 
 	-Check supplies
 	-Look at map
 	-Change pace
 	-Change food consumption
 
+High, Complete river interaction
+
+High, start creating the fort interaction	
 	
-	
-	
-Add	an npc to:
+High, Add	an npc to:
 	-Attempt to trade
 	-Talk to
 	
-Add store screen:
+High, Add store screen:
 	-Buy items
