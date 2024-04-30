@@ -11,8 +11,8 @@ High, create the start of the game
 High, Add UI to: 
 	-Check supplies
 	-Look at map
-	-Change pace
-	-Change food consumption
+	-Change pace - Enzo Bordogna 
+	-Change food consumption-Enzo Bordogna
 
 High, Complete river interaction
 
@@ -23,4 +23,4 @@ High, Add	an npc to:
 	-Talk to
 	
 High, Add store screen:
-	-Buy items
+	-Buy items - Julian C
