@@ -33,7 +33,7 @@ public class Main {
 	private static JLabel riverLabel = null;
 	private static boolean riverDecisionMade;
 	private static int fortIndex = -1;
-
+	private static Wagon wag = new Wagon();
 	
 	/**
 	 * Launch the application.
@@ -255,6 +255,21 @@ public class Main {
 		fort.setFont(new Font("Arial", Font.PLAIN, 13));
 		fort.setBounds(700, 186, 60, 40);
 		frame.getContentPane().add(fort);
+
+		JLabel speedNum = new JLabel();
+		speedNum.setBounds(700,270, 60,40);
+		frame.getContentPane().add(speedNum);
+
+		JButton speedIncrese = new JButton("Increse");
+		speedIncrese.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+    		wag.changePace(1);
+			
+			}
+		});
+		speedIncrese.setFont(new Font("Arial", Font.PLAIN, 13));
+		speedIncrese.setBounds(700, 228, 60, 40);
+		frame.getContentPane().add(speedIncrese);
 	}
 	
 	private static void riverOptions() {
