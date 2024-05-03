@@ -9,17 +9,14 @@ public class Person {
 	public int money;
 	public int health;
 	public String relation;
+	
 	public ArrayList<Item> items = new ArrayList<Item>();
+	
 	public void setMoney(int change) {
 		money = money + change;
 	}
 	public int getMoney() {
 		return money;
 	}
-	
-	public int FoodComp()
-	{
-	
-	return 0;
-	}
+
 }

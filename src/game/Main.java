@@ -92,12 +92,12 @@ public class Main {
 	public static void gameScreen() {
     	frame.getContentPane().removeAll();
 		frame.repaint();
-		
+		/* 
 		allLabels = lblMake.makeLabels("src/csv/images.csv");
 		for(int i = 0; i < allLabels.size(); i++) {
 			frame.add(allLabels.get(i));
 		}
-		
+		*/
 		JButton btnNewButton = new JButton("Travel");
 			btnNewButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -146,6 +146,10 @@ public class Main {
  	       frame.add(topPanel);
  	       frame.add(middlePanel);
  	       frame.add(bottomPanel);
+
+			JLabel days = new JLabel();
+			days.setBounds(100,360,150,20);
+			frame.add(days);
  	       	 	      
 		
 		frame.repaint();
@@ -154,16 +158,18 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+
+
             if(traveling == true) {
             	
-
+				
           
         		miliSecondCound = miliSecondCound + 1;
         		if(miliSecondCound >= 24) {
         			
         			secondCount++;
         			miliSecondCound = 0;
-        			
+        			days.setText("" + secondCount);
         			allLabels.add(lblMake.randLabel("src/csv/images.csv"));
 
         		}	
@@ -181,13 +187,13 @@ public class Main {
         		}
 
         			for(int i = 0; i < allLabels.size(); i++) {
-            			if(allLabels.get(i).getText().equals("for")) {
+            			if(allLabels.get(i).getName().equals("for")) {
             				topPanel.add(allLabels.get(i));
             			}
-            			if(allLabels.get(i).getText().equals("mid")) {
+            			if(allLabels.get(i).getName().equals("mid")) {
             				middlePanel.add(allLabels.get(i));
             			}
-            			if(allLabels.get(i).getText().equals("bac")) {
+            			if(allLabels.get(i).getName().equals("bac")) {
             				bottomPanel.add(allLabels.get(i));
             			} 
 
@@ -199,17 +205,17 @@ public class Main {
             		
             		
             		for(int i = 0; i < allLabels.size(); i++) {			
-            			if(allLabels.get(i).getText().equals("for")) {
+            			if(allLabels.get(i).getName().equals("for")) {
             				
             				allLabels.get(i).setBounds(allLabels.get(i).getX() + 5, allLabels.get(i).getY(), allLabels.get(i).getWidth(), allLabels.get(i).getHeight());
             				          			
             				}
-            			if(allLabels.get(i).getText().equals("mid")) {
+            			if(allLabels.get(i).getName().equals("mid")) {
             				
             				allLabels.get(i).setBounds(allLabels.get(i).getX() + 3, allLabels.get(i).getY(), allLabels.get(i).getWidth(), allLabels.get(i).getHeight());
            			
             				}
-            			if(allLabels.get(i).getText().equals("bac")) {
+            			if(allLabels.get(i).getName().equals("bac")) {
             				
             				allLabels.get(i).setBounds(allLabels.get(i).getX() + 1, allLabels.get(i).getY(), allLabels.get(i).getWidth(), allLabels.get(i).getHeight());
             			
