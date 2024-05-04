@@ -2,6 +2,8 @@ package game;
 
 import java.awt.EventQueue;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -25,9 +27,13 @@ public class Main {
 	public static int miliSecondCound = 0;
 	public static int secondCount = 0;
 	
-	private static ArrayList<JLabel> allLabels = new ArrayList<>();	
+	private static List<JLabel> allLabels = new ArrayList<JLabel>();
 
-
+	
+	private static List<String> speeds = Arrays.asList("Slow", "Fast", "Grueling");
+	
+	private static int speedIndex = 0;
+	private static String speed;
 	private static JFrame frame;
 	
 	private static boolean traveling = false;
@@ -162,6 +168,10 @@ public class Main {
 			MyLabel days = new MyLabel();
 			days.setBounds(100,360,150,20);
 			backgorund.add(days);
+
+			MyLabel SpeedSetting = new MyLabel();
+			days.setBounds(140,360,150,20);
+			backgorund.add(SpeedSetting);
  	       	 	      
 		
 		frame.repaint();
@@ -275,20 +285,28 @@ public class Main {
 		fort.setBounds(700, 186, 60, 40);
 		frame.getContentPane().add(fort);
 
-		JLabel speedNum = new JLabel();
-		speedNum.setBounds(700,270, 60,40);
-		frame.getContentPane().add(speedNum);
 
 		JButton speedIncrese = new JButton("Increse");
 		speedIncrese.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-    		wag.changePace(1);
-			
+				speedIndex = (speedIndex + 1) % speeds.size();
+				speed = speeds.get(speedIndex); // Assign the value to 'speed'
 			}
 		});
 		speedIncrese.setFont(new Font("Arial", Font.PLAIN, 13));
 		speedIncrese.setBounds(700, 228, 60, 40);
 		frame.getContentPane().add(speedIncrese);
+
+		JButton speedDecrease = new JButton("Decrease");
+		speedDecrease.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+    		wag.decreasePace(1);
+			
+			}
+		});
+		speedDecrease.setFont(new Font("Arial", Font.PLAIN, 13));
+		speedDecrease.setBounds(700, 268, 60, 40);
+		frame.getContentPane().add(speedDecrease);
 	}
 	
 	private static void riverOptions() {
