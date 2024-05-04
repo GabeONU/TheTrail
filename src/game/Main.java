@@ -6,12 +6,14 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 import javax.swing.JButton;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.lang.reflect.InvocationTargetException;
 import java.awt.event.ActionEvent;
 import java.awt.Dimension;
 
@@ -70,9 +72,9 @@ public class Main {
 		frame.setBounds(100, 100, 800, 450);
 		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		//frame.getContentPane().setLayout(null);
 		
-
+		frame.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Play Game!");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -107,6 +109,16 @@ public class Main {
 			btnNewButton.setFont(new Font("Arial", Font.PLAIN, 13));
 			btnNewButton.setBounds(700, 60, 60, 40);
 			frame.getContentPane().add(btnNewButton);
+
+			JButton txt = new JButton("Text");
+			txt.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					btnNewButton.setText("Traveling");
+				}
+			});
+			txt.setFont(new Font("Arial", Font.PLAIN, 13));
+			txt.setBounds(638, 60, 60, 40);
+			frame.getContentPane().add(txt);
 			
 			JButton btnDebug = new JButton("Debug");
 			btnDebug.addActionListener(new ActionListener() {
@@ -142,14 +154,14 @@ public class Main {
  	      backgorund.setOpaque(false);
  	      backgorund.setSize(new Dimension(frame.getWidth(), frame.getHeight()));
  	        
-	 	   frame.add(backgorund);
- 	       frame.add(topPanel);
- 	       frame.add(middlePanel);
- 	       frame.add(bottomPanel);
+	 	   frame.add(backgorund, 1);
+ 	       frame.add(topPanel, 2);
+ 	       frame.add(middlePanel, 3);
+ 	       frame.add(bottomPanel, 4);
 
-			JLabel days = new JLabel();
+			MyLabel days = new MyLabel();
 			days.setBounds(100,360,150,20);
-			frame.add(days);
+			backgorund.add(days);
  	       	 	      
 		
 		frame.repaint();
@@ -158,22 +170,21 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-
+			
 
             if(traveling == true) {
             	
 				
-          
+ 
         		miliSecondCound = miliSecondCound + 1;
         		if(miliSecondCound >= 24) {
         			
         			secondCount++;
         			miliSecondCound = 0;
-        			days.setText("" + secondCount);
+					days.setText("" + secondCount);	
         			allLabels.add(lblMake.randLabel("src/csv/images.csv"));
+				}
 
-        		}	
-        		
         		//add a refrence to the river pos
         		if(riverLabel != null) {
 
@@ -188,12 +199,15 @@ public class Main {
 
         			for(int i = 0; i < allLabels.size(); i++) {
             			if(allLabels.get(i).getName().equals("for")) {
+							allLabels.get(i).setLayout(null);
             				topPanel.add(allLabels.get(i));
             			}
             			if(allLabels.get(i).getName().equals("mid")) {
+							allLabels.get(i).setLayout(null);
             				middlePanel.add(allLabels.get(i));
             			}
             			if(allLabels.get(i).getName().equals("bac")) {
+							allLabels.get(i).setLayout(null);
             				bottomPanel.add(allLabels.get(i));
             			} 
 
@@ -234,7 +248,6 @@ public class Main {
         });
 
         timer.start(); // Start the timer
-
 
     }
 	
@@ -300,6 +313,7 @@ public class Main {
 		frame.getContentPane().add(floating);
 		
 	}
+
 		
 
 }

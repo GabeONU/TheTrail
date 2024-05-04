@@ -129,6 +129,7 @@ public JLabel makeLabel(String path, String name, int x, int y) {
                 	thing = line.split(COMMA_DELIMITER);
 					ImageIcon imageIcon = new ImageIcon(sprts.setSpriteImage(img,size,size));
                 	lbl = new JLabel(imageIcon);
+					lbl.setLayout(null);
 					lbl.setName(name);
             		lbl.setFont(new Font("Microsoft San Serif", Font.PLAIN, size));
             		lbl.setBounds(x, y, size, size);
