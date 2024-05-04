@@ -110,10 +110,10 @@ public class Main {
 			btnNewButton.setBounds(700, 60, 60, 40);
 			frame.getContentPane().add(btnNewButton);
 
-			JButton txt = new JButton("Text");
+			JButton txt = new JButton("Store");
 			txt.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					btnNewButton.setText("Traveling");
+					storeScreen();
 				}
 			});
 			txt.setFont(new Font("Arial", Font.PLAIN, 13));
@@ -312,6 +312,37 @@ public class Main {
 		floating.setBounds(240, 260, 60, 40);
 		frame.getContentPane().add(floating);
 		
+	}
+
+	private static void storeScreen() {
+
+		System.out.println("Store Screen");
+
+		JPanel store = new JPanel();
+		store.setBackground(Color.BLUE);
+		store.setOpaque(true);
+		store.setBounds(300,50,250,300);
+		frame.add(store , 5);
+
+		JPanel gre = new JPanel();
+		gre.setBackground(Color.GREEN);
+		gre.setOpaque(true);
+		gre.setBounds(290,40,270,320);
+		frame.add(gre , 6);
+
+		JButton btnNewButton = new JButton("Exit Store");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.remove(gre);
+				frame.remove(store);
+				frame.repaint();
+			}
+		});
+		btnNewButton.setFont(new Font("Arial", Font.PLAIN, 13));
+		btnNewButton.setBounds(160, 250, 75, 40);
+		store.add(btnNewButton);
+
+		frame.repaint();
 	}
 
 		
