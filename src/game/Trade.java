@@ -16,6 +16,6 @@ public class Trade {
         } else {
             System.out.println("Trade failed. One or both items not found.");
         }
-		System.out.println("Tradee: " + tradee.items.get(0).name + " Trader: " + trader.items.get(0).name);
+		System.out.println("Tradee: " + tradee.items.get(0).getName() + " Trader: " + trader.items.get(0).name);
 	}
 }

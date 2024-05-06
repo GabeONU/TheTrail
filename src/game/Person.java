@@ -10,7 +10,10 @@ public class Person {
 	public int health;
 	public String relation;
 	public ArrayList<Item> items = new ArrayList<Item>();
-	public void setMoney(int change) {
+    public Person(String string, int i) {
+        //TODO Auto-generated constructor stub
+    }
+    public void setMoney(int change) {
 		money = money + change;
 	}
 	public int getMoney() {
