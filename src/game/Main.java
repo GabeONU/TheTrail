@@ -2,6 +2,8 @@ package game;
 
 import java.awt.EventQueue;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -32,9 +34,13 @@ public class Main {
 	public static int miliSecondCound = 0;
 	public static int secondCount = 0;
 	
-	private static ArrayList<JLabel> allLabels = new ArrayList<>();	
+	private static List<JLabel> allLabels = new ArrayList<JLabel>();
 
-
+	
+	private static List<String> speeds = Arrays.asList("Slow", "Fast", "Grueling");
+	
+	private static int speedIndex = 0;
+	private static String speed;
 	private static JFrame frame;
 	
 	private static boolean traveling = false;
@@ -182,12 +188,6 @@ public class Main {
 			MyLabel days = new MyLabel();
 			days.setBounds(100,360,150,20);
 			backgorund.add(days);
-
-			for(int i = 0; i < wagon.getNumOx() - 1; i++) {
-				JLabel ox = lblMake.makeLabel("src/game/imgs/ox.png","ox",64,64);
-				ox.setBounds(315 - (i * 32),150,64,64);
-				topPanel.add(ox);
-			}
  	       	 	      
 		
 		frame.repaint();
@@ -352,51 +352,20 @@ public class Main {
 		fort.setBounds(700, 186, 60, 40);
 		frame.getContentPane().add(fort);
 
-	}
+		JLabel speedNum = new JLabel();
+		speedNum.setBounds(700,270, 60,40);
+		frame.getContentPane().add(speedNum);
 
-	private static void fortOptions(){
-		JButton trade = new JButton("Trade");
-		JButton leave = new JButton("Leave");
-
-		MyLabel lblLineOne = new MyLabel();
-		lblLineOne.setText("You have come to a fort. You can either trade or leave.");
-		lblLineOne.setBounds(110, 300, 550, 30);
-		frame.add(lblLineOne);
-
-		MyLabel lblLineTwo = new MyLabel();
-		lblLineTwo.setText("The fort has: " + (int)(Math.random() * 10) + " supplies.");
-		lblLineTwo.setBounds(110, 320, 550, 30);
-		frame.add(lblLineTwo);
- 
-
-		trade.addActionListener(new ActionListener() {
+		JButton speedIncrese = new JButton("Increse");
+		speedIncrese.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				fortDecisionMade = true;
-				frame.remove(trade);
-				frame.remove(leave);
-				frame.remove(lblLineOne);
-				frame.remove(lblLineTwo);
-				traveling = true;
+    		wag.changePace(1);
+			
 			}
 		});
-		trade.setFont(new Font("Arial", Font.PLAIN, 13));
-		trade.setBounds(150, 260, 60, 40);
-		frame.getContentPane().add(trade);
-		
-		
-		leave.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				fortDecisionMade = true;
-				frame.remove(trade);
-				frame.remove(leave);
-				frame.remove(lblLineOne);
-				frame.remove(lblLineTwo);
-				traveling = true;
-			}
-		});
-		leave.setFont(new Font("Arial", Font.PLAIN, 13));
-		leave.setBounds(240, 260, 60, 40);
-		frame.getContentPane().add(leave);
+		speedIncrese.setFont(new Font("Arial", Font.PLAIN, 13));
+		speedIncrese.setBounds(700, 228, 60, 40);
+		frame.getContentPane().add(speedIncrese);
 	}
 	
 	private static void riverOptions() {
