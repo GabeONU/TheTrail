@@ -6,7 +6,7 @@ public class Person {
 	
 	public String name;
 	public int age;
-	public int money;
+	public int money = 500;
 	public int health;
 	public String relation;
 	

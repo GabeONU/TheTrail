@@ -51,7 +51,8 @@ public class LabelReader {
 	
 public JLabel makeLabel(String path, String name, int x, int y) {
 		
-		JLabel lbl = new JLabel(name);
+		JLabel lbl = new JLabel();
+		lbl.setName(name);
 		lbl.setSize(x, y);
 		if(name.equals("for")) {
 			lbl.setBounds(-500, -50, x, y);

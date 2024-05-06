@@ -7,6 +7,8 @@ public class Wagon {
 	private int numOx = 1; 
 	
 	public int speed = 12;
+
+	public int food = 0;
 	
 	
 	void setWagonWeight(int lbs) {
@@ -17,8 +19,8 @@ public class Wagon {
 		return wagonWeight;
 	}
 	
-	void setOxNumber(int oxNum) {
-		numOx = numOx + oxNum;
+	void setOxNumber(int toAdd) {
+		numOx += toAdd;
 	}
 	
 	int getNumOx() {
